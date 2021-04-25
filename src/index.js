@@ -8,6 +8,7 @@ if (process.env.CONFIG_PATH == undefined)
 // dependencies
 const fs = require('fs');
 const discord = require('discord.js');
+const rust = require('./rust.js');
 
 // check if config file exists
 if (!fs.existsSync(process.env.CONFIG_PATH))
@@ -77,6 +78,12 @@ client.on('message', msg => {
     if (content.startsWith(config.prefix))
     {
         msg.reply('Yeet');
+    }
+
+    if (msg.content.match(/```(?:rust|rs)(?<code>.*)```/s))
+    {
+        let code = msg.content.match(/```(?:rust|rs)(?<code>.*)```/s).groups.code;
+        rust.exec(msg.channel, code);
     }
 });
 
