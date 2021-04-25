@@ -1,6 +1,6 @@
 {
   "name": "evalbot",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Evaluate code in discord",
   "main": "index.js",
   "scripts": {

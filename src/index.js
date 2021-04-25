@@ -20,6 +20,8 @@ catch
     process.exit(2);
 }
 
+const discord = require('discord.js')
+
 // check if config file exists
 if (!fs.existsSync(process.env.CONFIG_PATH))
 {
