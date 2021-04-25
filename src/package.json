@@ -1,6 +1,6 @@
 {
   "name": "evalbot",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Evaluate code in discord",
   "main": "index.js",
   "scripts": {
@@ -17,5 +17,8 @@
     "Evaluate"
   ],
   "author": "Avery R. <dev@nekoboi.com> (https://ancomcat.is.infinitely.gay/)",
-  "license": "BSD-3-Clause"
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
 }
