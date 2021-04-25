@@ -6,6 +6,8 @@ module.exports.exec = exec;
 
 function exec(channel, code)
 {
+    channel.startTyping();
+
     var payload = JSON.stringify({
         channel: 'nightly',
         edition: '2018',
@@ -48,4 +50,6 @@ function exec(channel, code)
 
     req.write(payload);
     req.end();
+
+    channel.stopTyping();
 }

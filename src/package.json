@@ -17,8 +17,5 @@
     "Evaluate"
   ],
   "author": "Avery R. <dev@nekoboi.com> (https://ancomcat.is.infinitely.gay/)",
-  "license": "BSD-3-Clause",
-  "dependencies": {
-    "discord.js": "^12.5.3"
-  }
+  "license": "BSD-3-Clause"
 }

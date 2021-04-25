@@ -7,14 +7,24 @@ if (process.env.CONFIG_PATH == undefined)
 
 // dependencies
 const fs = require('fs');
-const discord = require('discord.js');
 const rust = require('./rust.js');
+
+try
+{
+    const discord = require('discord.js');
+}
+catch
+{
+    console.log('discord.js is not installed.');
+    console.log('please run `npm i discord.js -s` in the src/ directory to install discord.js.');
+    process.exit(2);
+}
 
 // check if config file exists
 if (!fs.existsSync(process.env.CONFIG_PATH))
 {
     console.log(`The config file at ${process.env.CONFIG_PATH} does not exist.`);
-    process.exit(2);
+    process.exit(3);
 }
 
 // constants
@@ -25,13 +35,13 @@ const client = new discord.Client();
 if (config.token == undefined)
 {
     console.log('The config file must include the `token` property.');
-    process.exit(3);
+    process.exit(4);
 }
 
 if (typeof(config.token) != 'string')
 {
     console.log('The token property must be a string.');
-    process.exit(4);
+    process.exit(5);
 }
 
 if (config.lurk == undefined)
@@ -42,7 +52,7 @@ if (config.lurk == undefined)
 if (typeof(config.lurk) != 'boolean')
 {
     console.log('The lurk property must be a boolean.');
-    process.exit(5);
+    process.exit(6);
 }
 
 if (config.prefix == undefined)
@@ -53,7 +63,7 @@ if (config.prefix == undefined)
 if (typeof(config.prefix) != 'string')
 {
     console.log('The prefix property must be a string.');
-    process.exit(6);
+    process.exit(7);
 }
 
 // ready event handler
